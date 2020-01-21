@@ -1,0 +1,47 @@
+<div class="container" ng-app="myApp">
+  <div class="row">
+    
+    <div ui-view></div>
+    
+  </div>
+  
+  <script type="text/ng-template" id="login.html">
+    <div class="col-sm-12 login">
+      <div class="page-header">
+        <div class="logos">
+          <img src="/images/theorem.png" alt="Theorem Advertising logo">
+          <img src="/images/aflac.png" alt="Aflac logo">
+        </div>
+        <p>Please log in to continue...</p>
+      </div>
+
+      <form ng-submit="formSubmit()" class="form">
+        <div class="col-xs-12 col-sm-6 col-md-4 form-wrapper">
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="username" placeholder="username" required=""/>
+          </div> 
+
+          <div class="form-group">
+            <input type="password" class="form-control" ng-model="password" placeholder="password" required=""/>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn">Login</button>
+            <span class="text-danger">{{ error }}</span>
+          </div>
+
+          <p class="login-trouble">Having trouble logging in?<br>Please reach out to the team at Theorem and we'll assist you further.</p>
+
+        </div>
+      </form>
+    </div>
+  </script>
+  
+  <script type="text/ng-template" id="home.html">
+    <div class="col-md-12">
+      <h3>Welcome to the Dashboard!</h3>
+    
+      <a ui-sref="login">Back</a>
+    </div>
+  </script>
+</div>
